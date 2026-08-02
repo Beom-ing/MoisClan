@@ -8,8 +8,23 @@
 <meta name="description" content="2017년 창단, 다시 문 여는 좀비고등학교 클랜 Mois.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+/* Pretendard 정적 woff2 — 같은 저장소의 fonts/ 폴더를 먼저 찾고, 없으면 CDN */
+@font-face{font-family:"PretendardKR";font-weight:400;font-display:swap;font-style:normal;
+  src:url("./fonts/Pretendard-Regular.woff2") format("woff2"),
+      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Regular.woff2") format("woff2")}
+@font-face{font-family:"PretendardKR";font-weight:600;font-display:swap;font-style:normal;
+  src:url("./fonts/Pretendard-SemiBold.woff2") format("woff2"),
+      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-SemiBold.woff2") format("woff2")}
+@font-face{font-family:"PretendardKR";font-weight:700;font-display:swap;font-style:normal;
+  src:url("./fonts/Pretendard-Bold.woff2") format("woff2"),
+      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2") format("woff2")}
+@font-face{font-family:"PretendardKR";font-weight:800;font-display:swap;font-style:normal;
+  src:url("./fonts/Pretendard-ExtraBold.woff2") format("woff2"),
+      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-ExtraBold.woff2") format("woff2")}
+</style>
 <style>
 /* ========== TOKENS ========== */
 :root{
@@ -25,7 +40,8 @@ html[data-theme="light"]{
 html{-webkit-text-size-adjust:100%}
 body{
   background:var(--bg); color:var(--fg);
-  font-family:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  font-family:"PretendardKR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",
+    "Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
   font-weight:400; line-height:1.6; letter-spacing:-.01em;
   overflow-x:hidden; overscroll-behavior-y:none; word-break:keep-all; overflow-wrap:break-word;
   transition:background-color .55s var(--ease), color .55s var(--ease);
@@ -35,10 +51,11 @@ body{
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--fg);outline-offset:4px}
 
-.display{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 118,"wght" 900;
+.display{font-family:"Archivo","Arial Black","Helvetica Neue",Impact,sans-serif;
+  font-variation-settings:"wdth" 118,"wght" 900;
   text-transform:uppercase;line-height:.84;letter-spacing:-.03em}
-.mono{font-family:"JetBrains Mono",monospace;text-transform:uppercase;
-  font-size:11px;letter-spacing:.22em;color:var(--dim)}
+.mono{font-family:"JetBrains Mono","SFMono-Regular",Consolas,"Courier New",monospace;
+  text-transform:uppercase;font-size:11px;letter-spacing:.22em;color:var(--dim)}
 
 /* ========== AMBIENT LAYERS ========== */
 #fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
@@ -59,9 +76,9 @@ main{position:relative;z-index:1}
 /* ========== LOADER ========== */
 #loader{position:fixed;inset:0;z-index:100;background:#050505;color:#fff;
   display:flex;align-items:flex-end;justify-content:space-between;padding:var(--pad)}
-#loader .lmark{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 118,"wght" 900;
+#loader .lmark{font-family:"Archivo","Arial Black",Impact,sans-serif;font-variation-settings:"wdth" 118,"wght" 900;
   font-size:clamp(48px,17vw,150px);line-height:.8;letter-spacing:-.04em}
-#loader .lnum{font-family:"JetBrains Mono",monospace;font-size:clamp(28px,9vw,64px);font-weight:700}
+#loader .lnum{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;font-size:clamp(28px,9vw,64px);font-weight:700}
 #loader .lwipe{position:absolute;inset:0;background:#050505;transform-origin:50% 100%}
 #loader.done .lwipe{transform:scaleY(0);transition:transform .9s var(--ease)}
 #loader.done .lmark,#loader.done .lnum{opacity:0;transform:translateY(-18px);transition:.5s var(--ease)}
@@ -88,7 +105,7 @@ main{position:relative;z-index:1}
 /* ========== HERO ========== */
 .hero{min-height:100svh;padding:var(--pad);display:flex;flex-direction:column;justify-content:space-between}
 .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.wordmark{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 125,"wght" 900;
+.wordmark{font-family:"Archivo","Arial Black",Impact,sans-serif;font-variation-settings:"wdth" 125,"wght" 900;
   font-size:clamp(72px,25.5vw,270px);line-height:.78;letter-spacing:-.045em;text-transform:uppercase;
   display:flex;will-change:transform}
 .wordmark span{display:block;overflow:hidden}
@@ -109,7 +126,7 @@ main{position:relative;z-index:1}
 .marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
   padding:14px 0;transform:skewY(calc(var(--vel)*-.35deg));transition:transform .4s var(--ease)}
 .marq-in{display:flex;width:max-content;animation:scroll 26s linear infinite}
-.marq-in span{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 112,"wght" 800;
+.marq-in span{font-family:"Archivo","Arial Black",Impact,sans-serif;font-variation-settings:"wdth" 112,"wght" 800;
   font-size:clamp(26px,7.4vw,58px);text-transform:uppercase;padding:0 .35em;white-space:nowrap;line-height:1}
 .marq-in span.o{-webkit-text-stroke:1px var(--fg);color:transparent}
 @keyframes scroll{to{transform:translateX(-50%)}}
@@ -121,19 +138,19 @@ main{position:relative;z-index:1}
 /* ========== STATS ========== */
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
 .stat{background:var(--bg);padding:22px 16px 18px;transition:background-color .55s var(--ease)}
-.stat .n{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 100,"wght" 900;
+.stat .n{font-family:"Archivo","Arial Black",Impact,sans-serif;font-variation-settings:"wdth" 100,"wght" 900;
   font-size:clamp(40px,13vw,78px);line-height:.9;letter-spacing:-.04em}
 .stat .k{margin-top:8px}
 .ghost{position:absolute;left:0;bottom:-2vw;width:max-content;pointer-events:none;opacity:.07;
-  font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 125,"wght" 900;
+  font-family:"Archivo","Arial Black",Impact,sans-serif;font-variation-settings:"wdth" 125,"wght" 900;
   font-size:26vw;line-height:.8;text-transform:uppercase;white-space:nowrap;will-change:transform}
 
 /* ========== SEASONS ========== */
 .seasons{margin-top:34px;border-top:1px solid var(--line)}
 .srow{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;
   padding:12px 0;border-bottom:1px solid var(--line)}
-.srow .ss{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--dim)}
-.srow .sm{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;
+.srow .ss{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;font-size:11px;letter-spacing:.1em;color:var(--dim)}
+.srow .sm{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;font-size:11px;letter-spacing:.12em;
   text-transform:uppercase;white-space:nowrap;color:var(--dim)}
 .sbar{height:9px;border:1px solid var(--line);position:relative;overflow:hidden}
 .sbar i{position:absolute;top:0;bottom:0;left:0;width:0;background:var(--fg);
@@ -161,8 +178,8 @@ main{position:relative;z-index:1}
 .roster{border-top:1px solid var(--line);margin-top:30px}
 .row{display:flex;align-items:center;gap:14px;padding:18px 2px;border-bottom:1px solid var(--line);
   position:relative;overflow:hidden}
-.row .rn{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--dim);width:26px;flex:none}
-.row .rname{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 108,"wght" 800;
+.row .rn{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;font-size:11px;color:var(--dim);width:26px;flex:none}
+.row .rname{font-family:"Archivo","Arial Black",Impact,sans-serif;font-variation-settings:"wdth" 108,"wght" 800;
   font-size:clamp(24px,7.4vw,46px);text-transform:uppercase;line-height:1;letter-spacing:-.03em}
 .row .rrole{margin-left:auto;text-align:right}
 .row .swipe{position:absolute;inset:0;background:var(--fg);transform:translateX(-101%);
@@ -171,7 +188,7 @@ main{position:relative;z-index:1}
 .row:hover{color:var(--bg)}
 .row:hover .rn,.row:hover .rrole{color:var(--bg);opacity:.7}
 .row.vacant .rname{-webkit-text-stroke:1px var(--fg);color:transparent;
-  font-family:"Pretendard Variable",Pretendard,sans-serif;font-weight:800;
+  font-family:"PretendardKR","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-weight:800;
   font-size:clamp(21px,6.2vw,38px);letter-spacing:-.045em;
   animation:blink 3s var(--ease) infinite}
 .row.vacant:hover .rname{-webkit-text-stroke:1px var(--bg)}
@@ -192,7 +209,7 @@ main{position:relative;z-index:1}
 .btn:hover::before{transform:scale(1)}
 .checks{display:flex;flex-direction:column;gap:0;margin-top:30px;text-align:left}
 .check{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px}
-.check b{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--dim);padding-top:4px}
+.check b{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;font-size:11px;color:var(--dim);padding-top:4px}
 
 footer{padding:34px var(--pad) 44px;border-top:1px solid var(--line);
   display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -287,7 +304,7 @@ footer{padding:34px var(--pad) 44px;border-top:1px solid var(--line);
     <div class="cards">
       <div class="card rv" style="--i:1"><div class="cm mono">SEASON</div><div class="ct">래더 시즌 기여도</div><div class="cd">시즌이 열리면 개인 래더로 기여 점수를 쌓습니다.<br>목표는 시즌마다 티어 한 칸씩 올리기.</div></div>
       <div class="card rv" style="--i:2"><div class="cm mono">SQUAD</div><div class="ct">1군 · 2군 편성</div><div class="cd">티어 기준으로 나누되 벽은 없습니다.<br>2군에서 올라오면 그 시즌 바로 1군으로 뜁니다.</div></div>
-      <div class="card rv" style="--i:3"><div class="cm mono">PVE</div><div class="ct">진격의 좀비</div><div class="cd"><br>전형 간부가 파티를 잡고 공략까지 챙깁니다.</div></div>
+      <div class="card rv" style="--i:3"><div class="cm mono">PVE</div><div class="ct">진격의 좀비</div><div class="cd">전형 간부가 파티를 잡고 공략까지 챙깁니다.</div></div>
       <div class="card rv" style="--i:4"><div class="cm mono">CLAN</div><div class="ct">클랜룸 · 시즌 결산</div><div class="cd">시즌이 끝나면 클랜룸에 모여 단체 사진을 찍고,<br>시즌 결산을 정리합니다.</div></div>
     </div>
   </section>
@@ -343,7 +360,7 @@ footer{padding:34px var(--pad) 44px;border-top:1px solid var(--line);
       <div class="check rv" style="--i:5"><b>03</b><div>티어 인증 <span class="mono" style="color:inherit;opacity:.6">스크린샷 첨부</span></div></div>
     </div>
 
-    <a class="btn rv" id="cta" style="--i:6" href="http://pf.kakao.com/_ubxfnG" target="_blank" rel="noopener"><span>카카오톡으로 가입 신청하기 →</span></a>
+    <a class="btn rv" id="cta" style="--i:6" href="https://pf.kakao.com/_ubxfnG" target="_blank" rel="noopener"><span>카카오톡으로 가입 신청하기 →</span></a>
     <div class="mono rv" style="--i:7;margin-top:18px">위 세 가지를 남겨주시면 순서대로 확인합니다</div>
   </section>
 
