@@ -6,24 +6,33 @@
 <meta name="theme-color" content="#050505">
 <title>MOIS CLAN — 클랜원 모집</title>
 <meta name="description" content="2017년 창단, 다시 문 여는 좀비고등학교 클랜 Mois.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
 <style>
+/* 영문 제목 Archivo (가변 TTF) — 저장소 fonts/ 폴더 우선, 없으면 CDN */
+@font-face{font-family:"Archivo";font-weight:100 900;font-stretch:62% 125%;
+  font-display:swap;font-style:normal;
+  src:url("./fonts/Archivo-Variable.ttf") format("truetype"),
+      url("https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/archivo/Archivo%5Bwdth,wght%5D.ttf") format("truetype")}
+
+/* 라벨용 JetBrains Mono (가변 TTF) */
+@font-face{font-family:"JetBrains Mono";font-weight:100 800;
+  font-display:swap;font-style:normal;
+  src:url("./fonts/JetBrainsMono-Variable.ttf") format("truetype"),
+      url("https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf") format("truetype")}
+
 /* Pretendard 정적 woff2 — 같은 저장소의 fonts/ 폴더를 먼저 찾고, 없으면 CDN */
 @font-face{font-family:"PretendardKR";font-weight:400;font-display:swap;font-style:normal;
   src:url("./fonts/Pretendard-Regular.woff2") format("woff2"),
-      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Regular.woff2") format("woff2")}
+      url("https://unpkg.com/pretendard@1.3.9/dist/web/static/woff2/Pretendard-Regular.woff2") format("woff2")}
 @font-face{font-family:"PretendardKR";font-weight:600;font-display:swap;font-style:normal;
   src:url("./fonts/Pretendard-SemiBold.woff2") format("woff2"),
-      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-SemiBold.woff2") format("woff2")}
+      url("https://unpkg.com/pretendard@1.3.9/dist/web/static/woff2/Pretendard-SemiBold.woff2") format("woff2")}
 @font-face{font-family:"PretendardKR";font-weight:700;font-display:swap;font-style:normal;
   src:url("./fonts/Pretendard-Bold.woff2") format("woff2"),
-      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2") format("woff2")}
+      url("https://unpkg.com/pretendard@1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2") format("woff2")}
 @font-face{font-family:"PretendardKR";font-weight:800;font-display:swap;font-style:normal;
   src:url("./fonts/Pretendard-ExtraBold.woff2") format("woff2"),
-      url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-ExtraBold.woff2") format("woff2")}
+      url("https://unpkg.com/pretendard@1.3.9/dist/web/static/woff2/Pretendard-ExtraBold.woff2") format("woff2")}
 </style>
 <style>
 /* ========== TOKENS ========== */
