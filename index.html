@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050505">
-<title>MOIS CLAN — 좀비고등학교 클랜 모집</title>
+<title>MOIS CLAN — 클랜원 모집</title>
 <meta name="description" content="2017년 창단, 다시 문 여는 좀비고등학교 클랜 Mois. 부마스터 포함 4자리 모집 중.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,13 +48,9 @@ a{color:inherit;text-decoration:none}
 @keyframes grain{
   0%{transform:translate(0,0)}20%{transform:translate(-6%,4%)}40%{transform:translate(4%,-5%)}
   60%{transform:translate(-3%,-3%)}80%{transform:translate(5%,3%)}100%{transform:translate(0,0)}}
-.blob{position:fixed;top:0;left:0;width:280px;height:280px;border-radius:50%;z-index:3;
-  background:#fff;mix-blend-mode:difference;pointer-events:none;filter:blur(38px);opacity:.5;
-  transform:translate(-50%,-50%);will-change:transform}
 .bar{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--fg);z-index:60;
   transform:scaleX(0);transform-origin:0 50%;will-change:transform}
 @media (hover:none),(pointer:coarse){
-  .blob{display:none}
   .grain{opacity:.18}
   #fx{opacity:.4}
 }
@@ -211,7 +207,7 @@ footer{padding:34px var(--pad) 44px;border-top:1px solid var(--line);
     transition-duration:.001ms!important}
   .rv,.word i{opacity:1;transform:none}
   .wipe{clip-path:none}
-  .blob,.grain{display:none}
+  .grain{display:none}
 }
 </style>
 </head>
@@ -226,7 +222,6 @@ footer{padding:34px var(--pad) 44px;border-top:1px solid var(--line);
 <div class="bar" id="bar"></div>
 <canvas id="fx"></canvas>
 <div class="grain"></div>
-<div class="blob" id="blob"></div>
 
 <main>
 
@@ -292,7 +287,7 @@ footer{padding:34px var(--pad) 44px;border-top:1px solid var(--line);
     <div class="cards">
       <div class="card rv" style="--i:1"><div class="cm mono">SEASON</div><div class="ct">래더 시즌 기여도</div><div class="cd">시즌이 열리면 개인 래더로 기여 점수를 쌓습니다.<br>목표는 시즌마다 티어 한 칸씩 올리기.</div></div>
       <div class="card rv" style="--i:2"><div class="cm mono">SQUAD</div><div class="ct">1군 · 2군 편성</div><div class="cd">티어 기준으로 나누되 벽은 없습니다.<br>2군에서 올라오면 그 시즌 바로 1군으로 뜁니다.</div></div>
-      <div class="card rv" style="--i:3"><div class="cm mono">PVE</div><div class="ct">진격의 좀비</div><div class="cd">래더 안 도는 날엔 4인 파티로 같이 돕니다.<br>전형 간부가 파티를 잡고 공략까지 챙깁니다.</div></div>
+      <div class="card rv" style="--i:3"><div class="cm mono">PVE</div><div class="ct">진격의 좀비</div><div class="cd"><br>전형 간부가 파티를 잡고 공략까지 챙깁니다.</div></div>
       <div class="card rv" style="--i:4"><div class="cm mono">CLAN</div><div class="ct">클랜룸 · 시즌 결산</div><div class="cd">시즌이 끝나면 클랜룸에 모여 단체 사진을 찍고,<br>시즌 결산을 정리합니다.</div></div>
     </div>
   </section>
@@ -320,7 +315,7 @@ footer{padding:34px var(--pad) 44px;border-top:1px solid var(--line);
       <div class="card rv" style="--i:1"><div class="cm mono">1군</div><div class="ct">다이아 이상</div><div class="cd">래더 주력.<br>시즌 기여도 상위권을 같이 노립니다.</div></div>
       <div class="card rv" style="--i:2"><div class="cm mono">2군</div><div class="ct">골드 2번 이상</div><div class="cd">올라오는 중인 분들.<br>티어가 오르면 그 시즌 바로 1군 편성입니다.</div></div>
       <div class="card rv" style="--i:3"><div class="cm mono">TEST</div><div class="ct">테스트 후 정식 등록</div><div class="cd">1군 · 2군 지원자 모두 테스트를 거칩니다.<br>티어보다 판단력과 태도를 봅니다.</div></div>
-      <div class="card rv" style="--i:4"><div class="cm mono">부마스터</div><div class="ct">진격의 좀비 전형</div><div class="cd">부마스터 한 자리는 이쪽입니다.<br>진격의 좀비 리드와 공략 안내를 맡습니다.</div></div>
+      <div class="card rv" style="--i:4"><div class="cm mono">부마스터</div><div class="ct">진격의 좀비 전형</div><div class="cd">간부 한 자리는 이쪽입니다.<br>진격의 좀비 리드와 공략 안내를 맡습니다.</div></div>
     </div>
   </section>
 
@@ -348,7 +343,7 @@ footer{padding:34px var(--pad) 44px;border-top:1px solid var(--line);
       <div class="check rv" style="--i:5"><b>03</b><div>티어 인증 <span class="mono" style="color:inherit;opacity:.6">스크린샷 첨부</span></div></div>
     </div>
 
-    <a class="btn rv" id="cta" style="--i:6" href="https://beom-ing.github.io/MoisClan/" target="_blank" rel="noopener"><span>카카오톡으로 가입 신청하기 →</span></a>
+    <a class="btn rv" id="cta" style="--i:6" href="http://pf.kakao.com/_ubxfnG" target="_blank" rel="noopener"><span>카카오톡으로 가입 신청하기 →</span></a>
     <div class="mono rv" style="--i:7;margin-top:18px">위 세 가지를 남겨주시면 순서대로 확인합니다</div>
   </section>
 
@@ -468,15 +463,7 @@ if(!RM){
   })();
 }
 
-/* ---- 8. 반전 블롭 : 마우스가 있는 기기에서만 ---- */
-if(!RM && matchMedia('(hover:hover) and (pointer:fine)').matches){
-  const b=$('#blob'); let bx=innerWidth/2, by=innerHeight/2, tx=bx, ty=by;
-  addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;},{passive:true});
-  (function m(){bx+=(tx-bx)*.07;by+=(ty-by)*.07;
-    b.style.transform=`translate(${bx}px,${by}px) translate(-50%,-50%)`;requestAnimationFrame(m);})();
-}else{ const b=$('#blob'); if(b) b.remove(); }
-
-/* ---- 9. 마그네틱 CTA + 터치 카드 ---- */
+/* ---- 8. 마그네틱 CTA + 터치 카드 ---- */
 const cta=$('#cta');
 if(cta&&matchMedia('(hover:hover)').matches){
   cta.addEventListener('pointermove',e=>{const r=cta.getBoundingClientRect();
@@ -488,7 +475,7 @@ $$('.card').forEach(c=>{
   c.addEventListener('touchend',()=>setTimeout(()=>c.classList.remove('tap'),450),{passive:true});
 });
 
-/* ---- 10. 라벨 스크램블 ---- */
+/* ---- 9. 라벨 스크램블 ---- */
 const CH='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 const sIO=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting||RM) return; sIO.unobserve(e.target);
